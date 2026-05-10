@@ -1,0 +1,317 @@
+.header {
+  min-height: 100vh;
+
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 24px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow decorativo */
+.header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: #38bdf8;
+
+  filter: blur(140px);
+
+  opacity: 0.12;
+
+  top: -200px;
+  right: -100px;
+
+  pointer-events: none;
+}
+
+/* CONTAINER */
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* TEXTO */
+.header-text {
+  flex: 1;
+
+  animation: fadeIn 1s ease-in-out;
+}
+
+.header-text h1 {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+
+  line-height: 1.1;
+
+  margin-bottom: 14px;
+
+  font-weight: 800;
+}
+
+.header-text h2 {
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+
+  font-weight: 400;
+
+  color: #cbd5e1;
+
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 1.08rem;
+
+  line-height: 1.7;
+
+  color: #cbd5e1;
+
+  max-width: 560px;
+
+  margin-bottom: 24px;
+}
+
+.location {
+  font-size: 0.95rem;
+
+  color: #94a3b8;
+
+  margin-bottom: 30px;
+}
+
+/* BOTÕES */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+}
+
+.buttons a {
+  padding: 12px 22px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* botão principal */
+.buttons a:first-child {
+  background: #38bdf8;
+  color: #0f172a;
+
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+}
+
+.buttons a:first-child:hover {
+  background: #0ea5e9;
+
+  transform: translateY(-2px);
+}
+
+/* botão secundário */
+.buttons a:last-child {
+  border: 2px solid rgba(56, 189, 248, 0.6);
+
+  color: #38bdf8;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  backdrop-filter: blur(8px);
+}
+
+.buttons a:last-child:hover {
+  background: #38bdf8;
+  color: #0f172a;
+
+  transform: translateY(-2px);
+}
+
+/* IMAGEM */
+.header-image {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image img {
+  width: min(32vw, 340px);
+  height: min(32vw, 340px);
+
+  min-width: 220px;
+  min-height: 220px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 6px solid rgba(56, 189, 248, 0.9);
+
+  box-shadow:
+    0 0 0 12px rgba(56, 189, 248, 0.08),
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.header-image img:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 0 14px rgba(56, 189, 248, 0.12),
+    0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .header-container {
+    gap: 40px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .header-image img {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header {
+    padding: 80px 20px 50px;
+  }
+
+  .header-container {
+    flex-direction: column-reverse;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 40px;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+
+    max-width: 100%;
+  }
+
+  .buttons {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .buttons a {
+    flex: 1;
+
+    max-width: 180px;
+
+    text-align: center;
+  }
+
+  .header-image img {
+    width: 220px;
+    height: 220px;
+
+    min-width: unset;
+    min-height: unset;
+  }
+}
+
+/* MOBILE PEQUENO */
+@media (max-width: 480px) {
+  .header {
+    padding: 70px 16px 40px;
+  }
+
+  .header-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.05rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons a {
+    max-width: 100%;
+  }
+
+  .header-image img {
+    width: 190px;
+    height: 190px;
+  }
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
