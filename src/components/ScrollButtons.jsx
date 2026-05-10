@@ -1,7 +1,14 @@
 import "./ScrollButtons.css";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
-const sections = ["home", "about", "skills", "education", "projects"];
+const sections = [
+  "home",
+  "about",
+  "skills",
+  "experience",
+  "education",
+  "projects",
+];
 
 export default function ScrollButtons() {
   const navigate = (direction) => {
